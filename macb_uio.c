@@ -68,7 +68,7 @@ static ssize_t dev_type_show(struct device *dev, struct device_attribute *attr,
 	return snprintf(buf, 64, "Unknown");
 }
 
-static DEVICE_ATTR_RO(dev_type, 0444, dev_type_show, NULL);
+static DEVICE_ATTR_RO(dev_type);
 
 /* sriov sysfs */
 static ssize_t pclk_hz_show(struct device *dev, struct device_attribute *attr,
@@ -95,7 +95,7 @@ static ssize_t pclk_hz_show(struct device *dev, struct device_attribute *attr,
 	return snprintf(buf, 12, "%lu", pclk_hz);
 }
 
-static DEVICE_ATTR_RO(pclk_hz, 0444, pclk_hz_show, NULL);
+static DEVICE_ATTR_RO(pclk_hz);
 
 static ssize_t phy_mode_show(struct device *dev, struct device_attribute *attr,
 							 char *buf)
@@ -110,7 +110,7 @@ static ssize_t phy_mode_show(struct device *dev, struct device_attribute *attr,
 	return snprintf(buf, 64, "%s", pm);
 }
 
-static DEVICE_ATTR_RO(phy_mode, 0444, phy_mode_show, NULL);
+static DEVICE_ATTR_RO(phy_mode);
 
 static ssize_t physical_addr_show(struct device *dev, struct device_attribute *attr,
 							char *buf)
@@ -132,7 +132,7 @@ static ssize_t physical_addr_show(struct device *dev, struct device_attribute *a
 	return snprintf(buf, 16, "0x%llx", physical_addr);
 }
 
-static DEVICE_ATTR_RO(physical_addr, 0444, physical_addr_show, NULL);
+static DEVICE_ATTR_RO(physical_addr);
 
 static ssize_t speed_info_show(struct device *dev, struct device_attribute *attr,
 						char *buf)
@@ -165,7 +165,7 @@ static ssize_t speed_info_show(struct device *dev, struct device_attribute *attr
 	}
 }
 
-static DEVICE_ATTR_RO(speed_info, 0444, speed_info_show, NULL);
+static DEVICE_ATTR_RO(speed_info);
 
 static struct attribute *dev_attrs[] = {
 	&dev_attr_pclk_hz.attr,
